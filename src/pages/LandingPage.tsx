@@ -153,7 +153,7 @@ const LandingPage = () => {
             {/* Badge */}
             <div className="inline-flex items-center bg-gradient-to-r from-emerald-100 to-blue-100 border border-emerald-200 rounded-full px-6 py-2 mb-6">
               <Sparkles className="h-4 w-4 text-emerald-600 mr-2" />
-              <span className="text-emerald-800 font-medium text-sm">🌟 Join 50,000+ Students Making a Difference</span>
+              
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">

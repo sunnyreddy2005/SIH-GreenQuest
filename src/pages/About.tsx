@@ -26,36 +26,48 @@ const About = () => {
   ];
 
   const stats = [
-    { number: '10,000+', label: 'Students Engaged' },
-    { number: '500+', label: 'Schools Participating' },
-    { number: '50,000+', label: 'Trees Planted' },
-    { number: '25+', label: 'Countries Reached' }
+    { number: 'SIH 2025', label: 'Project Initiative' },
+    { number: '6', label: 'Team Members' },
+    { number: '1', label: 'Shared Vision' },
+    { number: 'KLU', label: 'University' }
   ];
 
   const team = [
     {
-      name: 'Dr. Sarah Martinez',
-      role: 'Founder & CEO',
-      description: 'Environmental scientist with 15+ years experience in sustainability education.',
-      avatar: 'SM'
+      name: 'Sannihith',
+      role: 'Team Lead',
+      description: 'Full-stack developer with expertise in gamification and educational technology.',
+      avatar: 'SN'
     },
     {
-      name: 'Alex Chen',
-      role: 'Head of Product',
-      description: 'Former educator turned tech innovator, passionate about gamified learning.',
-      avatar: 'AC'
+      name: 'Varsha',
+      role: 'Frontend Developer',
+      description: 'React specialist focused on creating engaging user experiences.',
+      avatar: 'VA'
     },
     {
-      name: 'Maria Rodriguez',
-      role: 'Education Director',
-      description: 'Curriculum specialist with expertise in environmental science pedagogy.',
-      avatar: 'MR'
+      name: 'Harini',
+      role: 'UI/UX Designer',
+      description: 'Creative designer passionate about educational interfaces.',
+      avatar: 'HA'
     },
     {
-      name: 'James Wilson',
-      role: 'Technology Lead',
-      description: 'Full-stack developer committed to building accessible educational technology.',
-      avatar: 'JW'
+      name: 'Anand',
+      role: 'Backend Developer',
+      description: 'Backend specialist with focus on game mechanics and user progression.',
+      avatar: 'AN'
+    },
+    {
+      name: 'Sai Krishna',
+      role: 'Full-stack Developer',
+      description: 'Full-stack developer specializing in educational gaming systems.',
+      avatar: 'SK'
+    },
+    {
+      name: 'Vijay',
+      role: 'Backend Developer',
+      description: 'Backend developer focused on system architecture and performance.',
+      avatar: 'VI'
     }
   ];
 
@@ -188,20 +200,23 @@ const About = () => {
           </h2>
           <div className="text-lg text-gray-600 leading-relaxed space-y-6">
             <p>
-              GreenQuest was born out of frustration with traditional environmental education. 
-              Our founder, Dr. Sarah Martinez, noticed that despite learning about climate change 
-              and environmental issues, students often felt overwhelmed and powerless to make a difference.
+              GreenQuest was born as an innovative project for Smart India Hackathon (SIH), 
+              created by a team of six passionate students from KL University. We recognized 
+              that traditional environmental education often fails to engage young learners 
+              and create lasting impact.
             </p>
             <p>
-              Drawing from her background in environmental science and her passion for gamification, 
-              she envisioned a platform where learning about sustainability could be as engaging as playing a game, 
-              and where students could see the real-world impact of their actions.
+              Our team envisioned a platform that would transform environmental education 
+              through gamification. By combining educational content with gaming elements, 
+              we created an engaging system where students can learn about sustainability 
+              while actively participating in environmental challenges and seeing the real 
+              impact of their actions.
             </p>
             <p>
-              Today, GreenQuest is used by schools across 25 countries, helping students not just learn about 
-              environmental issues, but actively participate in solving them. Every tree planted, every cleanup 
-              organized, and every sustainable habit formed through our platform brings us closer to our vision 
-              of a more sustainable future.
+              GreenQuest represents our commitment to making environmental education more 
+              interactive, engaging, and impactful. Through our platform, we aim to empower 
+              students across India and beyond to become active participants in creating a 
+              more sustainable future, one challenge at a time.
             </p>
           </div>
         </div>

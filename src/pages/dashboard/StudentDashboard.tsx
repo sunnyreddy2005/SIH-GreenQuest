@@ -542,7 +542,7 @@ const StudentDashboard = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <Droplets className="h-8 w-8 text-green-600" />
+              <img src="/dist/Logo.png" alt="GreenQuest" className="h-8 w-8" />
               <h1 className="text-2xl font-bold text-gray-900">GreenQuest</h1>
             </div>
             <div className="flex items-center space-x-4">

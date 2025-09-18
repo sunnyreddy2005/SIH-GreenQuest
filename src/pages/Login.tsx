@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Eye, EyeOff, Leaf, Mail, Lock, User, School, Info } from 'lucide-react';
+import { Eye, EyeOff, Mail, Lock, User, School, Info } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { demoCredentials } from '../utils/auth';
 
@@ -84,7 +84,7 @@ const Login = () => {
         {/* Logo and Header */}
         <div className="text-center">
           <div className="flex justify-center items-center space-x-2 mb-6">
-            <Leaf className="h-12 w-12 text-green-600" />
+            <img src="/dist/Logo.png" alt="GreenQuest" className="h-12 w-12" />
             <span className="text-3xl font-bold text-gray-900">GreenQuest</span>
           </div>
           <h2 className="text-2xl font-bold text-gray-900">

@@ -169,10 +169,13 @@ export class AuthService {
       lastActiveDate: new Date().toISOString(),
       achievements: [],
       unlockedFeatures: ['basic-features'],
-      energyPoints: 100,
-      maxEnergy: 100,
+      energyPoints: 200, // Increased from 100 for better game accessibility
+      maxEnergy: 200, // Increased from 100 for better game accessibility  
       lastEnergyRefresh: new Date().toISOString(),
-      inventory: []
+      inventory: [
+        // Give starter energy boosts
+        { ...inventoryItems.find(item => item.id === 'energy-boost')!, quantity: 3 }
+      ]
     };
     
     this.saveGameProfile(userId, profile);

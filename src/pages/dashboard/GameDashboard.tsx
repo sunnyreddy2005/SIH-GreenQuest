@@ -117,13 +117,19 @@ export default function GameDashboard({ onNavigate }: GameDashboardProps) {
     
     const lastRefresh = new Date(gameProfile.lastEnergyRefresh);
     const now = new Date();
-    const nextRefresh = new Date(lastRefresh.getTime() + 60 * 60 * 1000); // 1 hour
+    const nextRefresh = new Date(lastRefresh.getTime() + 2 * 60 * 1000); // 2 minutes instead of 1 hour
     
-    if (now >= nextRefresh) return 'Ready to refresh!';
+    if (now >= nextRefresh) return 'Energy refreshing!';
     
     const timeLeft = nextRefresh.getTime() - now.getTime();
     const minutes = Math.floor(timeLeft / (1000 * 60));
-    return `${minutes}m until next energy`;
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+    if (minutes > 0) {
+      return `${minutes}m ${seconds}s until +1 energy`;
+    } else {
+      return `${seconds}s until +1 energy`;
+    }
   };
 
   if (!user || !gameProfile) {
@@ -238,12 +244,33 @@ export default function GameDashboard({ onNavigate }: GameDashboardProps) {
             <Gamepad2 className="h-6 w-6 text-purple-600" />
             Mini Games
             <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full ml-2">
-              🔓 All Unlocked
+              🔓 All Unlocked & Enhanced
             </span>
           </h2>
-          <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Zap className="h-4 w-4" />
-            {gameProfile.energyPoints} energy available
+          <div className="flex items-center gap-3 text-sm">
+            <div className="flex items-center gap-1 text-gray-600">
+              <Zap className="h-4 w-4 text-green-500" />
+              <span className="font-semibold text-green-600">{gameProfile.energyPoints}</span>
+              <span className="text-gray-500">/ {gameProfile.maxEnergy} energy</span>
+            </div>
+            <div className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
+              +1 energy every 2 minutes
+            </div>
+          </div>
+        </div>
+
+        {/* Enhancement Notice */}
+        <div className="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-lg p-4 mb-6">
+          <div className="flex items-center gap-3 mb-2">
+            <div className="bg-green-100 p-2 rounded-full">
+              <Star className="h-5 w-5 text-green-600" />
+            </div>
+            <h3 className="font-semibold text-gray-800">🎉 Games Enhanced for Better Experience!</h3>
+          </div>
+          <div className="text-sm text-gray-600 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>✨ <strong>All games unlocked</strong> - No level restrictions</div>
+            <div>⚡ <strong>Reduced energy costs</strong> - Play more games</div>
+            <div>🔄 <strong>Faster energy refresh</strong> - +1 energy every 2 minutes</div>
           </div>
         </div>
 

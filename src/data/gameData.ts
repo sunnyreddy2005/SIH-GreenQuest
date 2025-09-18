@@ -183,7 +183,7 @@ export const gameAchievements: Achievement[] = [
   }
 ];
 
-// Mini Games
+// Mini Games - Enhanced for Better Accessibility
 export const miniGames: MiniGame[] = [
   {
     id: 'water-drop-catch',
@@ -193,7 +193,7 @@ export const miniGames: MiniGame[] = [
     difficulty: 'easy',
     timeLimit: 60,
     xpReward: 50,
-    energyCost: 10,
+    energyCost: 5, // Reduced from 10
     category: 'water',
     unlockLevel: 1
   },
@@ -205,7 +205,7 @@ export const miniGames: MiniGame[] = [
     difficulty: 'medium',
     timeLimit: 120,
     xpReward: 75,
-    energyCost: 15,
+    energyCost: 8, // Reduced from 15
     category: 'water',
     unlockLevel: 2
   },
@@ -217,7 +217,7 @@ export const miniGames: MiniGame[] = [
     difficulty: 'medium',
     timeLimit: 180,
     xpReward: 100,
-    energyCost: 20,
+    energyCost: 10, // Reduced from 20
     category: 'water',
     unlockLevel: 3
   },
@@ -229,9 +229,84 @@ export const miniGames: MiniGame[] = [
     difficulty: 'hard',
     timeLimit: 90,
     xpReward: 125,
-    energyCost: 25,
+    energyCost: 12, // Reduced from 25
     category: 'water',
     unlockLevel: 4
+  },
+  // Additional Energy Games - All Unlocked
+  {
+    id: 'energy-saver',
+    name: 'Energy Saver Challenge',
+    description: 'Turn off lights and appliances to save energy',
+    type: 'strategy',
+    difficulty: 'easy',
+    timeLimit: 90,
+    xpReward: 60,
+    energyCost: 6,
+    category: 'energy',
+    unlockLevel: 1
+  },
+  {
+    id: 'renewable-race',
+    name: 'Renewable Energy Race',
+    description: 'Build renewable energy sources faster than fossil fuels',
+    type: 'strategy',
+    difficulty: 'medium',
+    timeLimit: 150,
+    xpReward: 90,
+    energyCost: 9,
+    category: 'energy',
+    unlockLevel: 2
+  },
+  // Waste Management Games
+  {
+    id: 'recycle-sort',
+    name: 'Recycling Sorter',
+    description: 'Sort waste into correct recycling bins',
+    type: 'puzzle',
+    difficulty: 'easy',
+    timeLimit: 75,
+    xpReward: 55,
+    energyCost: 6,
+    category: 'waste',
+    unlockLevel: 1
+  },
+  {
+    id: 'compost-master',
+    name: 'Compost Master',
+    description: 'Learn what can and cannot be composted',
+    type: 'quiz',
+    difficulty: 'medium',
+    timeLimit: 100,
+    xpReward: 80,
+    energyCost: 8,
+    category: 'waste',
+    unlockLevel: 2
+  },
+  // Biodiversity Games
+  {
+    id: 'ecosystem-builder',
+    name: 'Ecosystem Builder',
+    description: 'Create balanced ecosystems with plants and animals',
+    type: 'strategy',
+    difficulty: 'hard',
+    timeLimit: 200,
+    xpReward: 150,
+    energyCost: 15,
+    category: 'biodiversity',
+    unlockLevel: 3
+  },
+  {
+    id: 'species-spotter',
+    name: 'Species Spotter',
+    description: 'Identify local wildlife and learn about their habitats',
+    type: 'memory',
+    difficulty: 'medium',
+    timeLimit: 120,
+    xpReward: 85,
+    energyCost: 9,
+    category: 'biodiversity',
+    unlockLevel: 2
   }
 ];
 
@@ -487,10 +562,10 @@ export class GameEngine {
   static calculateEnergy(lastRefresh: string, maxEnergy: number): number {
     const now = new Date();
     const lastRefreshDate = new Date(lastRefresh);
-    const hoursElapsed = (now.getTime() - lastRefreshDate.getTime()) / (1000 * 60 * 60);
+    const minutesElapsed = (now.getTime() - lastRefreshDate.getTime()) / (1000 * 60);
     
-    // Restore 1 energy per hour, max at maxEnergy
-    return Math.min(maxEnergy, Math.floor(hoursElapsed));
+    // Restore 1 energy every 2 minutes (much faster than 1 per hour), max at maxEnergy
+    return Math.min(maxEnergy, Math.floor(minutesElapsed / 2));
   }
 
   static updateStreak(lastActiveDate: string): { streak: number; isActive: boolean } {
